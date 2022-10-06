@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Базы данных - Wiki от Вики</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Wiki от Вики</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Главная</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Тестирование ПО <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing-po/testing-part-1/" class="dropdown-item">Что такое тестирование</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-2/" class="dropdown-item">Жизненный цикл ПО/задачи</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-3/" class="dropdown-item">Классификация тестирования</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-4/" class="dropdown-item">Тестовая документация</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-5/" class="dropdown-item">Баг. Баг-репорт</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-6/" class="dropdown-item">Что такое веб-приложение</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Тестирование API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing-api/testingapi-part-1/" class="dropdown-item">Что такое API</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-api/testingapi-part-2/" class="dropdown-item">Часть 2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Базы данных. SQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Базы данных</a>
+</li>
+                                    
+<li>
+    <a href="../sql/" class="dropdown-item">SQL.</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../testing-api/testingapi-part-2/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../sql/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#_1" class="nav-link">Знакомство с базами данных</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="_1">Знакомство с базами данных</h1>
+<p>Мы уже говорили о базах данных (database/DB), когда разбирали клиент-серверную архитектуру, и выяснили, что они предназначены для хранения и предоставления пользователям информации. </p>
+<p>В жизни каждый из нас так или иначе сталкивается с базами данных — мы пользуемся телефонными справочниками, каталогами товаров, списками книг и тому подобным. Даже сеть интернет представляет собой базу данных — столько там хранится информации, которую мы можем получить, записать, удалить оттуда.</p>
+<p>Формальное определение базы данных — это организованный набор данных, хранящихся длительное время  и доступных в электронном виде (имеем в виду определение для компьютерных технологий).</p>
+<p>Классификация баз данных разнообразна, и есть несколько факторов, по которым они разделяются. Первый — это классификация баз по типу хранимой информации: фактографические и документальные. Фактографические данные — это краткая информация об объектах, записанная определённым образом, например телефонный справочник. Документальные данные — это данные разного формата: текст, видео, картинки. </p>
+<p>Второй тип классификации — по характеру организации информации: она может быть структурированной, неструктурированной или частично структурированной. Телефонный справочник — структурированная база данных, тут данные расположены в алфавитном порядке. </p>
+<p>Третий тип делит базы данных по типу хранения информации, т. е. по принципу организации хранения. Базы данных могут быть локальными, централизованными и распределёнными. Локальная предназначена для одного пользователя (или нескольких). Например, каталог папок на вашем компьютере — вы организуете их хранение и пользуетесь информацией оттуда. Централизованные базы данных представляют собой удалённое хранилище данных, к которому имеют доступ много пользователей как одновременно, так и нет. Простой пользовательский пример для понимания — каталог книг на сайте электронной библиотеки, к которому могут иметь доступ сразу несколько пользователей, причём каждому пользователю будет выводиться та информация, что он запрашивает. Распределённые базы данных похожи на централизованные за исключением того, как физически организовано хранение данных: они могут быть распределены по разным удалённым источникам (компьютерам), однако, с точки зрения  пользователя, это никак не меняет его работу, он абсолютно точно также подключается к базе и запрашивает или записывает данные.</p>
+<p>Ну и четвертый тип указывает на то, по какой модели организовано хранение данных. Это могут быть иерархические базы данных, сетевые базы данные и реляционные базы данных. Иерархические говорят сами за себя — данные представляют собой объекты, расположенные в порядке подчинения. Как генеалогическое дерево, каждый объект имеет своего родителя, а родительские объекты имеют потомков.</p>
+<p>Сетевая модель позволяет объектам иметь связь друг с другом в любом порядке.</p>
+<p>И реляционным (от англ. relation — отношения) базам данных мы будем уделять особое внимание, т. к. чаще всего приходится работать с ними. Они представляют собой таблицы, в которых хранятся данные. Таблицы имеют связи и, соответственно, объекты таблиц также имеют связи с объектами из других таблиц.</p>
+<p>Более формально таблицу называют отношением, но слово “таблицы” прижилось, потому что это дает возможность лучше понять, что такое реляционные базы данных. Так вот, данные хранятся в таблицах, каждая строка таблицы является записью  — это объект со своими атрибутами, которыми являются столбцы таблицы, их ещё называют полями.</p>
+<p><img alt="db.png" src="../../img/db.png" /></p>
+<p>Все столбцы, т. е. атрибуты имеют свой тип данных, например атрибут Фамилия имеет тип данных Строка. Дата рождения — тип данных Дата. А в каждую ячейку записывается конкретное значение для каждого объекта. Вот, к примеру, база данных сотрудников компании. В таблице 6 объектов — 6 строк, и у каждого объекта 4 атрибута: ФИО, Дата рождения, Гражданство, Отдел. В ячейках записаны конкретные значения для каждого сотрудника.</p>
+<p><img alt="db1.png" src="../../img/db1.png" /></p>
+<p>Обратите внимание на первый столбец: он, как правило, является первичным ключом. Что это значит ? Ключ — это то значение, по которому мы можем уникально идентифицировать каждый объект. Это как серия и номер паспорта, по ним мы точно скажем, что этот человек — Иванов Иван, а этот — Петров Петр.</p>
+<p>Есть ещё понятие внешнего ключа. Это такое значение, которое будет связывать объект из одной таблицы с объектом в другой. По сути это копия первичного ключа таблицы в другой таблице. </p>
+<p><img alt="db2.png" src="../../img/db2.png" /></p>
+<p>В этом примере можем видеть, как по ключу можно связать сотрудника с выданной ему техникой. </p>
+<p>Как же мы можем взаимодействовать с базой данных? Мы можем запрашивать оттуда информацию об объектах, записывать в базу и удалять из неё, изменять информацию. Различные пользователи имеют различные возможности взаимодействия с базой, например кто-то не может записывать и удалять информацию в базу, а кто-то может всё, например администратор базы данных.  При работе на реальном проекте, как правило, существуют тестовые базы данных — это копии “боевых” баз данных, и тестировщики имеют доступ к тестовым данным в этих базах.  </p>
+<p>Для того чтобы было возможно и удобно взаимодействовать с базой данных, используют СУБД — система управления базой данных. Их существует огромное множество, наиболее известные  — Oracle, MySQL, PostgreSQL. По сути, работа с ними не представляет собой ничего сложного: нужно просто установить такую программу к себе на компьютер, настроить подключение к базе данных и работать в ней.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

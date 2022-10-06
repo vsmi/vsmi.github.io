@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>SQL. - Wiki от Вики</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Wiki от Вики</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="../.." class="nav-link">Главная</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Тестирование ПО <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing-po/testing-part-1/" class="dropdown-item">Что такое тестирование</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-2/" class="dropdown-item">Жизненный цикл ПО/задачи</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-3/" class="dropdown-item">Классификация тестирования</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-4/" class="dropdown-item">Тестовая документация</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-5/" class="dropdown-item">Баг. Баг-репорт</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-po/testing-part-6/" class="dropdown-item">Что такое веб-приложение</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Тестирование API <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../testing-api/testingapi-part-1/" class="dropdown-item">Что такое API</a>
+</li>
+                                    
+<li>
+    <a href="../../testing-api/testingapi-part-2/" class="dropdown-item">Часть 2</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Базы данных. SQL <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../db/" class="dropdown-item">Базы данных</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">SQL.</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../db/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#sql" class="nav-link">SQL.</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="sql">SQL.</h2>
+<p>В чём заключается работа с базой? В написании запросов — обращений к базе данных. Это возможно за счет языка SQL (Structured Query Language). Этот язык предназначен для описания, изменения и извлечения данных, хранимых в реляционных базах данных. Он не является языком программирования.</p>
+<p>Основные функции, которые можно выполнять с помощью SQL, — создание таблиц, добавление записей в таблицу, изменение записей, удаление и самое популярное (для начинающего тестировщика) — выборка данных из таблиц. </p>
+<p>SQL язык запросов к данным имеет несколько операторов, которые работают по определенной логике и в составе запроса могут предоставить пользователю необходимую ему информацию. Что касается выборки данных, конечно же, есть операторы, позволяющие создать, изменить или удалить запись в таблице. Вообще они делятся на несколько логически разделенных групп.</p>
+<p>DDL (Data Definition Language) — язык определения данных. Эти операторы предназначены для создания, удаления, изменения объектов базы: таблиц, записей. Например, CREATE TABLE &lt;имя&gt; создает таблицу, DROP TABLE &lt;имя&gt; удаляет таблицу из базы данных.</p>
+<p>DCL ( Data Control Language) — язык управления данными. Операторы этой группы предназначены для администрирования базы данных, в частности, они выдают или наоборот отменяют права доступа к базе. Например, GRANT выдаёт права пользователю для взаимодействия с данными из базы. REVOKE отменяет какую-либо привилегию у пользователя (примеры операторов берутся для Оracle db, для других СУБД операторы могут отличаться).</p>
+<p>DML (Data Manipulation Language) — язык обработки данных, эта часть и будет интересовать нас больше всего. Эти операторы предназначены для любых манипуляций с данными базы: выбора данных (SELECT), изменения значений для каких-либо полей в записи (UPDATE), добавления новых записей в таблицу (INSERT) и удаления строк(DELETE).</p>
+<p>Самый часто используемый оператор — SELECT. С помощью него можно доставать любые данные из таблицы, задав условия, по которым система найдет и отфильтрует данные. Общее правило записи запроса SELECT выглядит так:</p>
+<pre><code>SELECT [ALL/DISTINCT] &lt;список атрибутов&gt;/*
+FROM &lt;список таблиц&gt;
+[WHERE &lt;условие выборки&gt;]
+[ORDER BY &lt;список атрибутов&gt;]
+[GROUP BY &lt;список атрибутов&gt;]
+[HAVING &lt;условие&gt;]
+[UNION&lt;выражение с оператором SELECT&gt;]
+</code></pre>
+<p>Давайте разбирать по порядку: SELECT всегда идет первым, он как бы говорит системе, что надо сделать: “выбери мне кое-что...”.</p>
+<p>В квадратных скобках — необязательные операторы, т. е. вы можете не использовать их в своём запросе, но знать о них должны. ALL говорит, что выбрать нужно всё, что подойдёт под условия, указанные дальше. DISTINCT же наоборот сообщает системе, что выдать пользователю нужно только уникальные записи. Почему это нужно? В базах часто бывает, что записи дублируются, и выводить их все иногда не имеет смысла. Например, в нашей таблице “Техника” есть несколько записей для одного и того же сотрудника, т. е. одному человеку выдано несколько единиц техники, и в запросе, который покажет, скольким людям в компании выдана казённая техника, нам не нужно выводить все строки с одинаковым ID. Кстати, оператор ALL по умолчанию вшит в запрос. Это значит, что если вы не указываете DISTINCT и явно не пишите ALL, система будет считать, что вывести нужно все записи.</p>
+<p><img alt="sql.png" src="../../img/sql.png" /></p>
+<p>Давайте начнём составлять наш запрос, отображающий людей, которые имеют технику от компании. Указываем ключевое слово Select и distinct, чтобы не дублировать людей, у которых больше единицы техники</p>
+<pre><code class="language-sql">SELECT DISTINCT 
+</code></pre>
+<p>Далее указываем в запросе список атрибутов, т. е. список тех полей из таблицы, которые вам нужны. Их можно указать явно, прописав название каждого поля через запятую, или для красоты и ясности вы можете их переименовать в выводе, для чего вы переименовываете их не в самой таблице, а только для вывода. Для начала работы с SQL можно на этом не заморачиваться, хотя я всё же считаю, что учиться лучше сразу.</p>
+<pre><code class="language-sql">SELECT DISTINCT ID as Идентификатор_сотрудника
+</code></pre>
+<p>Оператор AS как раз указывает на переименование, т. е. читаем запрос так: “выведи мне все уникальные идентификаторы сотрудника”, и название столбца, который выведен, будет Идентификатор_сотрудника, а не ID.</p>
+<p>Далее важно не забыть указать, откуда нам взять данные. Это работа для оператора FROM, и мы пишем название таблицы или нескольких таблиц. Есть нюанс — когда используем несколько таблиц, запрос не сработает, если их просто перечислить.</p>
+<pre><code class="language-sql">SELECT DISTINCT ID as Идентификатор_сотрудника FROM Техника 
+</code></pre>
+<p>Вот что получим при таком запросе: </p>
+<p><img alt="sql1.png" src="../../img/sql1.png" /></p>
+<p>Видим, что вывод содержит пять строк, пять уникальных сотрудников, а не все семь строк, что были записаны в таблицу “Техника”.</p>
+<p>Вместо перечисления столбцов можно использовать * (звездочку), тогда запрос выведет все поля таблицы. Такой самый простой запрос можно делать для того, чтобы ознакомиться с таблицей, посмотреть, что за поля там есть, и уже потом углубиться и написать более узкий запрос.</p>
+<pre><code class="language-sql">SELECT * FROM Техника 
+</code></pre>
+<p><img alt="sql2.png" src="../../img/sql2.png" /></p>
+<p>Разобранные нами запросы имеют место быть, но работа с базой с помощью SQL для того-то и нужна, чтобы выбирать из таблицы конкретно то, что нужно пользователю. Для этого можно использовать оператор WHERE, указывающий условия, по которым нужно отобрать данные из базы. Например, нам нужно отобрать сотрудников, которым выдан ПК. Пишем запрос с условием, где в колонке Тип указано “ПК”. Как это условие перенести на SQL:</p>
+<pre><code class="language-sql">SELECT DISTINCT ID as Идентификатор_сотрудника FROM Техника WHERE Тип = &quot;ПК&quot;
+</code></pre>
+<p>Пишем оператор WHERE, а дальше непосредственно условие, по которому отфильтруем записи, т. е. указываем название атрибута (название столбца таблицы), ставим знак равно, который проверит, точно ли такое значение имеет поле. И пишем то значение, которое нам необходимо — ПК, чтобы отбрать всех, кому выдан ПК. Почему берём в кавычки? Мы говорили ранее про типы данных, и такой атрибут имеет тип Строка. Это всё, что мы пишем словами, аббревиатурами и тому подобное, а строку надо заключать в кавычки, чтобы система понимала, что это строка. Вывод на такой запрос будет выглядеть так:</p>
+<p><img alt="sql3.png" src="../../img/sql3.png" /></p>
+<p>Как вы понимаете, условие может быть любым, необязательно указывать точное совпадение по значению. Тут можно использовать различные логические операции, такие как  AND (И), OR (ИЛИ), NOT (НЕ) , IN (входит в), BETWEEN (между), LIKE (похожий), NOT NULL (не пустой), операторы Больше, Меньше (&lt;, ≤, &gt;,≥). Их функцию можно понять по названию. Давайте разберём на примерах: используя операторы AND и OR, выведем id сотрудников, которым выданы ПК или ноутбук, стоимостью свыше 50 000. </p>
+<pre><code class="language-sql">SELECT ID as Идентификатор_сотрудника FROM Техника 
+WHERE Тип = &quot;ПК&quot; OR Тип = &quot;Ноутбук&quot;
+AND Стоимость &gt;= 50 000
+</code></pre>
+<p><img alt="sql4.png" src="../../img/sql4.png" /></p>
+<p>Оператор IN отфильтрует те записи, у которых значения необходимых полей находятся в каком-то списке значений. Например, Тип IN (“ПК”,  “Ноутбук”), BETWEEN  можно использовать, чтобы отбирать значения поля, находящегося в каком-то интервале. LIKE  отберёт записи со значениями в поле, похожем на какое-то значение. Например, вы точно не знаете, как записано ФИО сотрудника: имя полностью или нет, инициалы, с отчеством или нет. И вам надо отобрать сотрудников по фамилии Иванов. Вот дана таблица сотрудников:</p>
+<p><img alt="sql5.png" src="../../img/sql5.png" /></p>
+<p>Напишем запрос для отбора всех Ивановых:</p>
+<pre><code class="language-sql">SELECT * FROM Сотрудники WHERE ФИО LIKE “Иванов %”
+</code></pre>
+<p>После слова LIKE идёт выражение, которое вычислит нужную нам строку, оно записывается в кавычках. Внутри пишем паттерн (шаблон) для отбора строки. Мы сразу пишем Иванов, т. к. с фамилии начинаются все записи в таблице. Чтобы исключить Иванову (женский род), нам нужно показать в запросе, что фамилия строго заканчивается на букву В, и нет никакого больше окончания. Для этого после “Иванов” ставим пробел, а после пробела — знак процента %. Он указывает на любое количество любых символов, нас не интересует Петр или Анатолий этот Иванов, и не интересует, как именно написано в таблице его имя и отчество.</p>
+<p>Оператор ORDER BY позволяет вывести данные в упорядоченном виде, например в алфавитном порядке. У него есть вспомогательные операторы ASC и DESC, они указывают порядок вывода от меньшего к большему и наоборот, соответственно. Первый оператор при ORDER BY зашит по умолчанию. Например, мы хотим вывести всех сотрудников по возрасту от самого старшего до самого молодого:</p>
+<pre><code class="language-sql">SELECT * FROM Сотрудники ORDER BY Дата рождения DESC
+</code></pre>
+<p><img alt="sql6.png" src="../../img/sql6.png" /></p>
+<p>Помимо указания столбца в операторе  ORDER BY можно указывать различные выражения, но это уже совсем непростой уровень, вы сможете этому научиться, если будете продолжать изучать SQL.</p>
+<p>GROUP BY позволит вам сгруппировать записи таблицы по определённому полю с одинаковым значением и вывести информацию. Например, хотим узнать скольким сотрудникам выданы ПК, ноутбуки, мониторы и телефоны, для чего группируем записи в таблице “Техника” по полю Тип. GROUP BY используется с агрегированными функциями, такими как COUNT() — количество, SUM() — сумма, MIN() — минимум, MAX() — максимум, AVG() — среднее.  </p>
+<pre><code class="language-sql">SELECT COUNT(ID), Тип FROM Техника GROUP BY Тип
+</code></pre>
+<p><img alt="sql7.png" src="../../img/sql7.png" /></p>
+<p>А оператор HAVING отберёт вам полученные группы по определённому принципу, т. е. он работает так же, как и WHERE, только отбирает группы, а не строки. На собеседованиях любят задавать вопрос: какой оператор используется с GROUP BY? Так вот, запомните, что HAVING всегда идет с GROUP BY.</p>
+<p>Данные можно выбирать не только из одной таблицы, можно запрашивать из разных. Это позволяет делать оператор JOIN. Новичкам нужно быть знакомым с этим оператором. Давайте с примером: выведем ФИО сотрудников, которым выдана техника и  тип этой техники. ФИО находится в таблице Сотрудники, а тип техники находится в таблице Техника. </p>
+<pre><code class="language-sql">SELECT ФИО, Тип 
+FROM Сотрудники JOIN Техника 
+ON Сотрудники.Сотрудник-ID = Техника.ID
+</code></pre>
+<p>Первая строка — выбираем столбец ФИО и ТИП, вторая строка — указываем, откуда выбираем строки: из таблицы Сотрудники и Техника с помощью оператора JOIN. Но не всё так просто: система должна понять, как ей соединить строку из первой таблицы со строкой из второй таблицы. Тут используем условие, по которому будем соединять строки. Пишется оно после ON, указываем название таблицы и через точку поле из этой таблицы. Помните, мы говорили про ключи? Вот как раз они и помогают соединять строки. Сотрудник-ID — первичный ключ из первой таблицы, его копия — внешний ключ, столбец ID во второй таблице, они должны совпадать. </p>
+<p><img alt="sql8.png" src="../../img/sql8.png" /></p>
+<p>Обратите внимание: в первой таблице 6 строк, во второй 4, в ответе выведено только 4 строки. Это потому, что мы использовали в запросе внутреннее пересечение таблиц, т. е. выбирали только те строки, ключ которых есть и в первой, и во второй таблице. Внутреннее пересечение называется INNER JOIN, и оно всегда работает по умолчанию, если будем писать просто JOIN. Но есть и другие функции для JOIN, чтобы лучше их понять можно наглядно посмотреть на диаграммы с кругами:</p>
+<p><img alt="sql-joins.png" src="../../img/sql-joins.png" /></p>
+<p>Например, давайте попробуем с RIGHT JOIN:</p>
+<pre><code class="language-sql">SELECT ФИО, Тип 
+FROM Техника RIGHT JOIN Сотрудники  
+ON Сотрудники.Сотрудник-ID = Техника.ID
+</code></pre>
+<p><img alt="sql9.png" src="../../img/sql9.png" /></p>
+<p>В вывод добавляются две строки из правой таблицы запроса (Сотрудники), в колонке ФИО выводятся их ФИО, а в колонке Тип значения — NULL (пусто). При таком JOIN в вывод дописываются строки со значениями из правой таблицы, и NULL-ы для строк левой таблицы, к которым не нашлась пара.</p>
+<p>Есть ещё некоторые другие операторы SQL, но их мы рассматривать в рамках этого урока не будем. Для знакомства и начального уровня достаточно усвоить тот материал, который я изложила выше. Но, конечно, в дальнейшем в своей работе вы сможете легко освоить и все остальные операторы языка SQL.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
